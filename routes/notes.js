@@ -1,11 +1,19 @@
-const id = require('../public/src/id');
+const nanoid = require('nanoid');
+const fse = require('fs-extra');
 
 const notes = require('express').Router();
-1
+
 
 notes.get('/', (req, res) => {
     console.log('Notes Loaded');
-    
+    fse.readJSON('./db/db.json')
+    .then(data => {
+        console.log(data);
+        res.json(data)
+    })
+    .catch(err => {
+        console.error(err);
+    })
 })
 
 notes.post('/', (req, res) => {
@@ -17,7 +25,7 @@ notes.post('/', (req, res) => {
         const newNote = {
             title,
             text,
-            id: id(),
+            id: nanoid(4),
         }
     }
 })
