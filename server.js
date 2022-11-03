@@ -7,13 +7,15 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/public')); // Make sure to include this in future projects!
+app.use(express.static(__dirname + '/public'));
 app.use('/api', api);
 
+// Route for the title page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
 })
 
+// Route for the notes page
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'));
 })
