@@ -16,7 +16,7 @@ The Note Taking App allows the user to create notes, delete notes, and view past
 * [nanoid](https://www.npmjs.com/package/nanoid)
 
 ## Geting Started
-1. Visit [this page]() to view the app on Heroku.
+1. Visit [this page](https://awoelf-note-taking-app.herokuapp.com/) to view the app on Heroku.
 2. Click on the `Get Started` button to go to the notes page.
 3. To create a new note, enter a note title and some text, then click the save button in the top right corner.
 4. The saved note will appear in the list on the left.
